@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP ICS Importer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-02 18:28+0100\n"
+"PO-Revision-Date: 2018-12-02 18:28+0100\n"
+"Last-Translator: Werner Joss\n"
+"Language-Team: Werner Joss\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ../cal-functions.php:35 ../cal-functions.php:36
+msgid " "
+msgstr ""
+
+#: ../cal-functions.php:147
+msgid "more"
+msgstr ""
+
+#: ../cal-functions.php:150
+msgid "close"
+msgstr ""
+
+#: ../cal-functions.php:183
+msgid "Download"
+msgstr ""
+
+#: ../cal-functions.php:191
+msgid "Permalink"
+msgstr ""
+
+#: ../cal-functions.php:193 ../cal-functions.php:319
+msgid "Event:"
+msgstr ""
+
+#: ../cal-functions.php:202 ../cal-functions.php:325
+msgid "When:"
+msgstr ""
+
+#: ../cal-functions.php:204 ../cal-functions.php:327
+msgid "Description:"
+msgstr ""
+
+#: ../cal-functions.php:205
+msgid "Location:"
+msgstr ""
+
+#: ../cal-functions.php:207
+msgid "URL:"
+msgstr ""
+
+#: ../cal-functions.php:302
+msgid "Legend:"
+msgstr ""
+
+#: ../ics-functions.php:122
+msgid "Previous"
+msgstr ""
+
+#: ../ics-functions.php:122
+msgid "Next"
+msgstr ""
+
+#: ../ics-functions.php:308 ../ics-functions.php:359
+msgid "There is no calendar set. Please review the calendar settings."
+msgstr ""
+
+#: ../ics-functions.php:316 ../ics-functions.php:373 ../ics-functions.php:421
+#, php-format
+msgid "iCal Events: Error loading [%s]"
+msgstr ""
+
+#: ../ics-import.php:193
+msgid "Settings Updated."
+msgstr ""
+
+#: ../ics-import.php:296 ../ics-import.php:414 ../ics-import.php:427
+msgid "Save Changes"
+msgstr ""
+
+#: ../ics-import.php:457
+msgid "Return to Calendar"
+msgstr ""
