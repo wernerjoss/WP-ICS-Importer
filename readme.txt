@@ -1,5 +1,5 @@
 === WP ICS Importer ===
-Contributors: dolfelt, hoernerfranz
+Contributors: dolfelt, Werner Joss
 Tags: calendar, events, ics, ical, icalendar, google, ajax, multi, classicpress
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -10,9 +10,14 @@ Stable tag: 1.7.3
 
 Display upcoming events from shared Google, Outlook, iCal or other ICS calendars.
 
+This Plugin is a fork of dolfelt's abandoned Plugin 'ICS Calendar' at
+https://wordpress.org/plugins/wordpress-ics-importer
+
 == Description ==
 
 Maintainer change from Version 1.7.0, see Changelog/Version History
+
+--
 
 It has been awhile since I updated this plugin, so I thought I would give you a new version with some big new features requested by users. Enjoy!
 Fetch and display events from your Google, Outlook or iCal calendar (or any other .ics file) in your blog. This plugin now support Multiple ICS Files!
