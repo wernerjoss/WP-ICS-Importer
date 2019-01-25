@@ -51,6 +51,18 @@ Features Include:
 
 4. You can also use the widget in your sidebar.
 
+Note: 1.+4. are no longer valid from Version 1.7.0 - see the following Description:
+
+FROM GITHUB.COM
+
+1. git clone https://github.com/wernerjoss/wp-ics-importer
+2. Upload Directory wp-ics-importer to your WP Installion, usually 'wp-content/plugins'
+3. Activate the plugin on the Plugins screen.
+Alternatively, you can also download the zip File from the GitHub Page, but note: this one will be named wp-ics-importer-master.zip
+and will unpack to a folder named wp-calda2ics-master.
+This will have to be renamed to wp-ics-importer before uploading !
+
+
 == Screenshots ==
 
 1. The admin section is clean and intuitive.
