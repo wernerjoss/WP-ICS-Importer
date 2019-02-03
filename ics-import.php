@@ -54,7 +54,7 @@ if (!class_exists("WPICSImporter")) {
 			$this->getAdminOptions();
 		}
 		
-		function getAdminOptions() {
+		static function getAdminOptions() {	// war nicht static
 			$ICSAdminOptions = array(
 				'ics_file' 				=> '',
 				'ics_files'				=> array(),

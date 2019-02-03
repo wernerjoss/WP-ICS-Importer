@@ -32,7 +32,8 @@ if (! class_exists('ICalEvents')) {
 			$date_format = $icsOptions['date_format'];
 			$time_format = $icsOptions['time_format'];
 			
-			$events = ICalEvents::get_events($options, $url, $gmt_start, $gmt_end, $limit);
+			// $events = ICalEvents::get_events($options, $url, $gmt_start, $gmt_end, $limit);
+			$events = ICalEvents::get_events($icsOptions, $url, $gmt_start, $gmt_end, $limit);	// fix ? 03.02.19
 						
 			if (!is_array($events)) return $events;
 			
