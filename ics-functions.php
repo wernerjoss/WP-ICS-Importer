@@ -1,6 +1,5 @@
 <?php
 
-if (! defined('ICAL_EVENTS_CACHE_TTL')) define('ICAL_EVENTS_CACHE_TTL', 60 * 60);  // 1 hour
 define('ICAL_EVENTS_CACHE_DEFAULT_EXTENSION', 'ics');
 define('ICAL_EVENTS_MAX_REPEATS', '100');
 if (! defined('ICAL_EVENTS_DEBUG')) define('ICAL_EVENTS_DEBUG', false);
@@ -400,6 +399,7 @@ if (! class_exists('ICalEvents')) {
 		 * destination file.
 		 */
 		static function cache_url($url, $force_reload=false) {
+			if (! defined('ICAL_EVENTS_CACHE_TTL')) define('ICAL_EVENTS_CACHE_TTL', 60 * 60);  // 1 hour, move here from beginning of file to avoid 'already defined warning 22.02.19
 			$file = ICalEvents::get_cache_file($url);
 
 			if (! file_exists($file) || (time() - filemtime($file) >= ICAL_EVENTS_CACHE_TTL) || $force_reload==true) {

@@ -130,15 +130,6 @@ if (!class_exists("WPICSImporter")) {
 				}
 				$icsOptions['ics_files'] = serialize($icsArray);
 				
-				// neu 21.01.18: (Achtung: nach Upload ist Options save im Admin Backend notwendig!)
-				/*	alt 02.12.18
-				$icsBgColArray = array();
-				foreach($_POST['ics_bgcolors'] as $k=>$val) {
-					if(!empty($val)) {
-						$icsBgColArray[$k+1] = $val;
-					}
-				}
-				*/
 				/*	neu 02.12.18	*/
 				$Line = $_POST['icsFileBgColor'];
 				//	print_r($Line);
@@ -153,17 +144,17 @@ if (!class_exists("WPICSImporter")) {
 				$icsOptions['title'] = $_POST['icsTitle'];
 				$icsOptions['event_limit'] = $_POST['icsEventLimit'];
 				$icsOptions['limit_type'] = $_POST['icsLimitType'];
-				$icsOptions['cache_time'] = $_POST['icsCacheTime'];
+				//	$icsOptions['cache_time'] = $_POST['icsCacheTime'];	// leave out for now, php warnin undefined variable 24.02.19
 				$icsOptions['enable_cache'] = $_POST['icsEnableCache'];
 				$icsOptions['time_format'] = $_POST['icsTimeFormat'];
 				$icsOptions['date_format'] = $_POST['icsDateFormat'];
-				$icsOptions['date_format_add_year'] = $_POST['icsDateFormatAddYear'];
+				// $icsOptions['date_format_add_year'] = $_POST['icsDateFormatAddYear'];	// leave out for now, php warnin undefined variable 24.02.19
 				$icsOptions['gmt_start'] = $_POST['icsGmtStart'];
 				$icsOptions['gmt_end'] = $_POST['icsGmtEnd'];
-				$icsOptions['gmt_start_now'] = $_POST['icsGmtStartNow'];
+				// $icsOptions['gmt_start_now'] = $_POST['icsGmtStartNow'];	// leave out for now, php warnin undefined variable 24.02.19
 				$icsOptions['custom_format'] = $_POST['icsCustomFormat'];
 				$icsOptions['use_custom_format'] = $_POST['icsUseCustomFormat'];
-				$icsOptions['calendar_num_events'] = $_POST['icsCalendarNumEvents'];
+				// $icsOptions['calendar_num_events'] = $_POST['icsCalendarNumEvents'];// leave out for now, php warnin undefined variable 24.02.19
 				$icsOptions['date_language'] = $_POST['icsDateLanguage'];
 				$icsOptions['date_function'] = $_POST['icsDateFunction'];
 				$icsOptions['show_next_prev'] = $_POST['icsShowNextPrev'];
@@ -265,8 +256,10 @@ if (!class_exists("WPICSImporter")) {
 								<td>
 								<label><input type="checkbox" name="icsEnableCache" value="true" <?php if ($icsOptions['enable_cache'] == "true") { echo 'CHECKED'; }?> /> Enable caching to save the .ics file on my server.</label>
 								<br /><small>The .ics file will be updated once per day. You can update it manually by clicking "Save Changes."</small>
-								<!--<input disabled="disabled" type="text" name="icsCacheTime" style="width: 10%; " value="<?php _e($icsOptions['cache_time'], 'WPICSImporter') ?>" /> Seconds
-								&nbsp;&nbsp;&nbsp;&nbsp;<small>Set to 1 hour. [Feature coming soon.]</small>-->
+								<!-- again commented 24.02.19
+								<input disabled="disabled" type="text" name="icsCacheTime" style="width: 10%; " value="<php _e($icsOptions['cache_time'], 'WPICSImporter') ?>" /> Seconds
+								&nbsp;&nbsp;&nbsp;&nbsp;<small>Set to 1 hour. [Feature coming soon.]</small>
+								 -->
 								</td></tr>
 							<tr valign="top"><th scope="row">Event Display Limit</th>
 								<td>
@@ -467,6 +460,7 @@ if (!class_exists("WPICSImporter")) {
 					preg_match_all('/\['.$this->showEvents.'=?([0-9]*)?( +cal=)?([0-9,]{1,})?\]/i',$content,$args);
 					foreach($args[1] as $k=>$arg) {
 						$more = '';
+						$gmt_start = $gmt_end = NULL;	// avoid undefined variable warning in line 511
 						if(!empty($arg)) {
 							$icsOptions['event_limit'] = $arg;
 							$more .= '='.$arg;
@@ -479,7 +473,6 @@ if (!class_exists("WPICSImporter")) {
 						} else {
 							$icsOptions['ics_file_default'] = $savedDefault;
 						}
-						
 						if($icsOptions['use_custom_format']=='true') {
 							$eventsContent = ICalEvents::custom_display_events($icsOptions);
 						} else {
@@ -508,12 +501,9 @@ if (!class_exists("WPICSImporter")) {
 								$icsFile = array_shift($icsArray);
 							}
 							$eventsContent = ICalEvents::display_events($icsFile, $gmt_start, $gmt_end, $icsOptions['event_limit']);
-							
 						}
 						$content = preg_replace('/\['.$this->showEvents.$more.'\]/i',$eventsContent,$content);
-							
 					}
-					
 				}
 				if(preg_match('/\['.$this->showCalendar.'( +cal=)?([0-9,]{1,})?\]/i',$content)) {
 					$cssAdd = '<style type="text/css" media="screen">@import "'. (empty($icsOptions['cal_css_file']) ? ICSCALENDAR_URLPATH.'library/ics-calendar.css' : ICSCALENDAR_CSSPATH.$icsOptions['cal_css_file'] ) .'";</style>'."\n";
