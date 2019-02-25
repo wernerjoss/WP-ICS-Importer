@@ -191,11 +191,11 @@ if (!class_exists("WPICSImporter")) {
 			<div style="width:100%;">
 				<div class="wrap">
 					<div class="icon32" id="icon-options-general"><br/></div>
-					<h2>ICS Calendar</h2>
+					<h2><?php _e('ICS Calendar', 'WPICSImporter') ?></h2>
 				<br />
 				<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-                    <h3>General Settings</h3>
-                        <a href="javascript:void(0);" onclick="jQuery(this).next('div').toggle();">Installation Instructions</a>
+                    <h3><?php _e('General Settings', 'WPICSImporter') ?></h3>
+                        <a href="javascript:void(0);" onclick="jQuery(this).next('div').toggle();"><?php _e('Installation Instructions', 'WPICSImporter') ?></a>
 						<div style="display:none; padding-left:20px; border:1px solid #CCC; ">
 							<p>This plugin can only be used on a <b>Page</b>.</p>
 							<h4>Event List</h4>
@@ -211,11 +211,11 @@ if (!class_exists("WPICSImporter")) {
 							</p>
 						</div>
 						<table class="form-table">
-							<tr valign="top"><th scope="row" width="100">Calendar Title</th>
+							<tr valign="top"><th scope="row" width="100"><?php _e('Calendar Title', 'WPICSImporter') ?></th>
 							<td>
 								<input type="text" name="icsTitle" style="width: 250px; " value="<?php _e(stripslashes($icsOptions['title']), 'WPICSImporter') ?>" />
 							</td></tr>
-							<tr valign="top"><th scope="row">URL to ICS File(s)</th>
+							<tr valign="top"><th scope="row"><?php _e('URL to ICS File(s)', 'WPICSImporter') ?></th>
 								<td>
 								<?php
 								$icsArray = unserialize($icsOptions['ics_files']);
@@ -236,12 +236,12 @@ if (!class_exists("WPICSImporter")) {
 								?>
 								</td></tr>
 							<!-- DONE: Add Input Field for ics_bgcolors 02.12..18	-->
-							<tr valign="top"><th scope="row">Calendar Background Color List</th>
+							<tr valign="top"><th scope="row"><?php _e('Calendar Background Color List', 'WPICSImporter') ?></th>
 								<td>
-								<input type="text" name="icsFileBgColor" value="<?php _e($icsBgcolorList, 'WPICSImporter') ?>" style="width:30em;margin-right:1em;" /><small>Comma separated Color List<br>Default=LightSalmon,IndianRed,LightSkyBlue</small>
+								<input type="text" name="icsFileBgColor" value="<?php _e($icsBgcolorList, 'WPICSImporter') ?>" style="width:30em;margin-right:1em;" /><small><?php _e('Comma separated Color List', 'WPICSImporter') ?><br>Default=LightSalmon,IndianRed,LightSkyBlue</small>
 								</td>
 							</tr>	
-							<tr valign="top"><th scope="row">Default Calendar</th>
+							<tr valign="top"><th scope="row"><?php _e('Default Calendar', 'WPICSImporter') ?></th>
 								<td>
 									<select name="icsFileDefault">
 										<?php
@@ -250,9 +250,9 @@ if (!class_exists("WPICSImporter")) {
 										} 
 										echo '<option value="combine" '.($icsOptions['ics_file_default']=='combine' ? 'selected="selected"' : '').'>Combine All Calendars</option>'."\n";
 										?>
-									</select> Select the default calendar to show.
+									</select><?php _e('Select the default calendar to show.', 'WPICSImporter') ?>
 								</td></tr>
-							<tr valign="top"><th scope="row">Cache Calendar File</th>
+							<tr valign="top"><th scope="row"><?php _e('Cache Calendar File', 'WPICSImporter') ?></th>
 								<td>
 								<label><input type="checkbox" name="icsEnableCache" value="true" <?php if ($icsOptions['enable_cache'] == "true") { echo 'CHECKED'; }?> /> Enable caching to save the .ics file on my server.</label>
 								<br /><small>The .ics file will be updated once per day. You can update it manually by clicking "Save Changes."</small>
@@ -261,48 +261,44 @@ if (!class_exists("WPICSImporter")) {
 								&nbsp;&nbsp;&nbsp;&nbsp;<small>Set to 1 hour. [Feature coming soon.]</small>
 								 -->
 								</td></tr>
-							<tr valign="top"><th scope="row">Event Display Limit</th>
+							<tr valign="top"><th scope="row"><?php _e('Event Display Limit', 'WPICSImporter') ?></th>
 								<td>
 									Show next <input type="text" name="icsEventLimit" style="width: 10%; " value="<?php _e($icsOptions['event_limit'], 'WPICSImporter') ?>" /> 
 									<label><input type="radio" name="icsLimitType" value="events" <?php echo ($icsOptions['limit_type']=='events') ? 'checked="checked"' : ''; ?> /> Events</label>
 									<label><input type="radio" name="icsLimitType" value="days" <?php echo ($icsOptions['limit_type']=='days') ? 'checked="checked"' : ''; ?> /> Days</label>
-									<br /><small>Set to "0" to show all events.</small>
+									<br /><small><?php _e('Set to "0" to show all events.', 'WPICSImporter') ?></small>
 								</td></tr>
 							<tr valign="top">
-								<th scope="row">Current Event Display</th>
+								<th scope="row"><?php _e('Current Event Display', 'WPICSImporter') ?></th>
 								<td>
-								<label><input type="checkbox" id="icsGmtStartNow_yes" name="icsGmtStartNow" value="true" <?php if ($icsOptions['gmt_start_now'] == "true") { echo('CHECKED="checked"'); }?> /> Show only upcoming event. (Only events in the future.)</label>
+								<label><input type="checkbox" id="icsGmtStartNow_yes" name="icsGmtStartNow" value="true" <?php if ($icsOptions['gmt_start_now'] == "true") { echo('CHECKED="checked"'); }?> /> <?php _e('Show only upcoming event. (Only events in the future.)', 'WPICSImporter') ?></label>
 								<br />
 								From <input type="text" name="icsGmtStart" style="width: 100px; " value="<?php _e($icsOptions['gmt_start'], 'WPICSImporter') ?>" /> to
 								<input type="text" name="icsGmtEnd" style="width: 100px; " value="<?php _e($icsOptions['gmt_end'], 'WPICSImporter') ?>" />
 								<br /><small>Use format 'YYYY-MM-DD' or 'YYYY-MM-DD HH:MM:SS'. This is irrelevant if the Upcoming Events box is checked. Leave these blank if you want to show all events.</small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Previous &amp; Next</th>
+							<tr valign="top"><th scope="row"><?php _e('Previous &amp; Next', 'WPICSImporter') ?></th>
 								<td>
                                 <label><input type="radio" name="icsShowNextPrev" value="0" <?php if($icsOptions['show_next_prev']=='0') echo ' checked="checked"'; ?>/> Hide</label>
                                 <label><input type="radio" name="icsShowNextPrev" value="1" <?php if($icsOptions['show_next_prev']=='1') echo ' checked="checked"'; ?>/> Show</label>
-								<br /><small>Whether or not to show buttons that allow users to view future events.</small>
+								<br /><small><?php _e('Whether or not to show buttons that allow users to view future events.', 'WPICSImporter') ?></small>
 								</td></tr>
 							</table>
-			<!-- disable multiple 'Save' Buttons (Admin Tabs not working anyway) 15.12.18
-			<div class="wrap">
-				<div class="submit"><input type="submit" class="button" name="update_ICSImporterSettings" value="<?php _e('Save Changes', 'WPICSImporter') ?>" /></div>
-			</div>
-			-->
-					<h3>Formatting</h3>
+					
+					<h3><?php _e('Formatting', 'WPICSImporter') ?></h3>
 						<table class="form-table">
-							<tr valign="top"><th scope="row" width="100">Date Format</th>
+							<tr valign="top"><th scope="row" width="100"><?php _e('Date Format', 'WPICSImporter') ?></th>
 								<td>
 								<input type="text" name="icsDateFormat" style="width: 20%; " value="<?php _e($icsOptions['date_format'], 'WPICSImporter') ?>" /> <b><?php echo ICalEvents::fdate($icsOptions['date_format'], time()); ?></b> 
 								<br /><label><input type="checkbox" name="icsDateFormatAddYear" value="1" <?php if ($icsOptions['date_format_add_year'] == '1') { echo('CHECKED="checked"'); }?> /> Show year at the end of dates that are not within the current year.</label>
 								<br /><small>Uses PHP <a target="_blank" href="http://us3.php.net/manual/en/function.date.php">Date Function</a> or <a href="http://us2.php.net/manual/en/function.strftime.php" target="_blank">strftime Function</a>.</small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Time Format</th>
+							<tr valign="top"><th scope="row"><?php _e('Time Format', 'WPICSImporter') ?></th>
 								<td>
 								<input type="text" name="icsTimeFormat" style="width: 20%; " value="<?php _e($icsOptions['time_format'], 'WPICSImporter') ?>" /> <b><?php echo ICalEvents::fdate($icsOptions['time_format'], time()); ?></b> <small>Local Server Time</small>
 								<br /><small>Uses PHP <a target="_blank" href="http://us3.php.net/manual/en/function.date.php">Date Function</a> or <a href="http://us2.php.net/manual/en/function.strftime.php" target="_blank">strftime Function</a>.</small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Custom Event Format</th>
+							<tr valign="top"><th scope="row"><?php _e('Custom Event Format', 'WPICSImporter') ?></th>
 								<td>
 									<p>Use custom format? <label><input type="radio" name="icsUseCustomFormat" value="true" <?php if ($icsOptions['use_custom_format'] == "true") { echo ('checked="checked"'); }?> onclick="if(this.checked==true) { document.getElementById('ics_custom_format').style.display='block'; }" /> Yes</label>
 										<label><input type="radio" name="icsUseCustomFormat" value="false" <?php if ($icsOptions['use_custom_format'] == "false") { echo('checked="checked"'); }?> onclick="if(this.checked==true) { document.getElementById('ics_custom_format').style.display='none'; }" /> No</label></p>
@@ -312,7 +308,7 @@ if (!class_exists("WPICSImporter")) {
 									<br />Use <i>%date-time%</i>, <i>%start-date%</i>, <i>%start-time%</i>, <i>%end-date%</i>, <i>%end-time%</i>, <i>%event-title%</i>, <i>%description%</i> and <i>%location%</i>.
 								</div>
 							</td></tr>
-							<tr valign="top"><th scope="row">Date Function</th>
+							<tr valign="top"><th scope="row"><?php _e('Date Function', 'WPICSImporter') ?></th>
 								<td>
 								<select name="icsDateFunction" style="width: 20%; " >
 									<option value="strftime" <?php if($icsOptions['date_function']=='strftime') echo ' selected="selected"'; ?>>Strftime Function</option>
@@ -320,10 +316,10 @@ if (!class_exists("WPICSImporter")) {
 								</select>
 								<br /><small>Uses PHP <a target="_blank" href="http://us3.php.net/manual/en/function.date.php">Date Function</a> or <a href="http://us2.php.net/manual/en/function.strftime.php" target="_blank">strftime Function</a>.</small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Date Locale (Language)</th>
+							<tr valign="top"><th scope="row"><?php _e('Date Locale (Language)', 'WPICSImporter') ?></th>
 								<td>
 								<input type="text" name="icsDateLanguage" style="width: 20%; " value="<?php _e($icsOptions['date_language'], 'WPICSImporter') ?>" />
-								<br /><small>Use a comma to seperate multiple locales. This can only be used if the date function is set to 'strftime'.</small><br />
+								<br /><small><?php _e('Use a comma to seperate multiple locales. This can only be used if the date function is set to \'strftime\'.', 'WPICSImporter') ?></small><br />
 								<?php 
 									ob_start();
 									system('locale -a');
@@ -339,30 +335,30 @@ if (!class_exists("WPICSImporter")) {
 									echo '</div>';
 									?>
 								</td></tr> 
-							<tr valign="top"><th scope="row">Privacy Mode</th>
+							<tr valign="top"><th scope="row"><?php _e('Privacy Mode', 'WPICSImporter') ?></th>
 								<td>
-									<p>Hide your event information? <label><input type="radio" name="icsPrivacyMode" value="1" <?php if ($icsOptions['privacy_mode'] == "1") { echo('checked="checked"'); }?> onclick="if(this.checked==true) { document.getElementById('ics_privacy_mode').style.display='block'; }" /> Yes</label>
+									<p><?php _e('Hide your event information? ', 'WPICSImporter') ?><label><input type="radio" name="icsPrivacyMode" value="1" <?php if ($icsOptions['privacy_mode'] == "1") { echo('checked="checked"'); }?> onclick="if(this.checked==true) { document.getElementById('ics_privacy_mode').style.display='block'; }" /> Yes</label>
 										<label><input type="radio" name="icsPrivacyMode" value="0" <?php if ($icsOptions['privacy_mode'] == "0") { echo('checked="checked"'); }?> onclick="if(this.checked==true) { document.getElementById('ics_privacy_mode').style.display='none'; }" /> No</label></p>
 								<div id="ics_privacy_mode" style="display:<?php print (($icsOptions['privacy_mode'] == "0") ? 'none' : 'block'); ?>; ">
-									<h5 style="margin:0;">Set Privacy Event Title</h5>
+									<h5 style="margin:0;"><?php _e('Set Privacy Event Title', 'WPICSImporter') ?></h5>
 									<input type="text" name="icsPrivacyModeName" style="width: 20%; " value="<?php _e($icsOptions['privacy_mode_name'], 'WPICSImporter') ?>" />
-									<small>This will replace your event title</small>
+									<small><?php _e('This will replace your event title', 'WPICSImporter') ?></small>
 								</div>
 							</td></tr>
 						</table>
 
-					<h3>Calendar</h3>
+					<h3><?php _e('Calendar', 'WPICSImporter') ?></h3>
 						<table class="form-table">
-							<tr valign="top"><th scope="row">Show Calendar Popups</th>
+							<tr valign="top"><th scope="row"><?php _e('Show Calendar Popups', 'WPICSImporter') ?></th>
 								<td>
 								<select name="icsCalPopups" style="width: 20%; " >
-									<option value="none" <?php if($icsOptions['cal_popups']=='none') echo ' selected="selected"'; ?>>Never</option>
-									<option value="mouse-over" <?php if($icsOptions['cal_popups']=='mouse-over') echo ' selected="selected"'; ?>>On Mouse Over</option>
-									<option value="click" <?php if($icsOptions['cal_popups']=='click') echo ' selected="selected"'; ?>>On Click</option>
+									<option value="none" <?php if($icsOptions['cal_popups']=='none') echo ' selected="selected"'; ?>><?php _e('Never', 'WPICSImporter') ?></option>
+									<option value="mouse-over" <?php if($icsOptions['cal_popups']=='mouse-over') echo ' selected="selected"'; ?>><?php _e('On Mouse Over', 'WPICSImporter') ?></option>
+									<option value="click" <?php if($icsOptions['cal_popups']=='click') echo ' selected="selected"'; ?>><?php _e('On Click', 'WPICSImporter') ?></option>
 								</select>
-								<br /><small>When to show the popups</small>
+								<br /><small><?php _e('When to show the popups', 'WPICSImporter') ?></small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Calendar Start Day</th>
+							<tr valign="top"><th scope="row"><?php _e('Calendar Start Day', 'WPICSImporter') ?></th>
 								<td>
 								<select name="icsCalStartDay" style="width: 20%; " >
 									
@@ -372,55 +368,50 @@ if (!class_exists("WPICSImporter")) {
 										echo '<option value="'.$key.'" ' . ( ($icsOptions['cal_startday']==$key) ? ' selected="selected"' : '' ) . '>'.$value.'</option>'."\n";
 									} ?>
 								</select>
-								<br /><small>What day of the week would you like the calendar to start on?</small>
+								<br /><small><?php _e('What day of the week would you like the calendar to start on?', 'WPICSImporter') ?></small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Events Per Cell</th>
+							<tr valign="top"><th scope="row"><?php _e('Events Per Cell', 'WPICSImporter') ?></th>
 								<td>
-									<input type="text" name="icsCalEventsPerDay" style="width: 10%; " value="<?php _e($icsOptions['cal_events_per_day'], 'WPICSImporter') ?>" /> <small>How many events to display per calendar cell.</small>
+									<input type="text" name="icsCalEventsPerDay" style="width: 10%; " value="<?php _e($icsOptions['cal_events_per_day'], 'WPICSImporter') ?>" /> <small><?php _e('How many events to display per calendar cell.', 'WPICSImporter') ?></small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Events on Multiple Days</th>
+							<tr valign="top"><th scope="row"><?php _e('Events on Multiple Days', 'WPICSImporter') ?></th>
 								<td>
                                 <label><input type="radio" name="icsCalMultiDay" value="0" <?php if($icsOptions['cal_show_multiday']=='0') echo ' checked="checked"'; ?>/> One Day</label>
                                 <label><input type="radio" name="icsCalMultiDay" value="1" <?php if($icsOptions['cal_show_multiday']=='1') echo ' checked="checked"'; ?>/> Multiple Days</label>
-								<br /><small>Whether or not to show multiday events on multiple days of the calendar, instead of just the first day.</small>
+								<br /><small><?php _e('Whether or not to show multiday events on multiple days of the calendar, instead of just the first day.', 'WPICSImporter') ?></small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Calendar Permalinks</th>
+							<tr valign="top"><th scope="row"><?php _e('Calendar Permalinks', 'WPICSImporter') ?></th>
 								<td>
                                 <label><input type="radio" name="icsCalPermalinks" value="0" <?php if($icsOptions['cal_permalinks']=='0') echo ' checked="checked"'; ?>/> Hide</label>
                                 <label><input type="radio" name="icsCalPermalinks" value="1" <?php if($icsOptions['cal_permalinks']=='1') echo ' checked="checked"'; ?>/> Show</label>
-								<br /><small>Whether or not to show permalinks in the calendar popups.</small>
+								<br /><small><?php _e('Whether or not to show permalinks in the calendar popups.', 'WPICSImporter') ?></small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Calendar Download Links</th>
+							<tr valign="top"><th scope="row"><?php _e('Calendar Download Links', 'WPICSImporter') ?></th>
 								<td>
                                 <label><input type="radio" name="icsCalEventDownload" value="0" <?php if($icsOptions['cal_event_download']=='0') echo ' checked="checked"'; ?>/> Hide</label>
                                 <label><input type="radio" name="icsCalEventDownload" value="1" <?php if($icsOptions['cal_event_download']=='1') echo ' checked="checked"'; ?>/> Show</label>
-								<br /><small>Allow users to download individual events to their own calendars.</small>
+								<br /><small><?php _e('Allow users to download individual events to their own calendars.', 'WPICSImporter') ?></small>
 								</td></tr>
-							<tr valign="top"><th scope="row">Shrink Calendar</th>
+							<tr valign="top"><th scope="row"><?php _e('Shrink Calendar', 'WPICSImporter') ?></th>
 								<td>
                                 <label><input type="radio" name="icsCalShrink" value="0" <?php if($icsOptions['cal_shrink']=='0') echo ' checked="checked"'; ?>/> Always Show 6 Rows</label>
                                 <label><input type="radio" name="icsCalShrink" value="1" <?php if($icsOptions['cal_shrink']=='1') echo ' checked="checked"'; ?>/> Shrink Calendar Based on Month</label>
-								<br /><small>Whether or not to shrink the height of the calendar based on the weeks in a given month.</small>
+								<br /><small><?php _e('Whether or not to shrink the height of the calendar based on the weeks in a given month.', 'WPICSImporter') ?></small>
 								</td></tr>
 						</table>
                     <div class="wrap">
                         <div class="submit"><input type="submit" class="button-primary" name="update_ICSImporterSettings" value="<?php _e('Save Changes', 'WPICSImporter') ?>" /></div>
                     </div>
 						
-					<h3>Advanced</h3>
-						<p>These settings are for advanced users. Please only change them if you know what you are doing.</p>
+					<h3><?php _e('Advanced', 'WPICSImporter') ?></h3>
+						<p><?php _e('These settings are for advanced users. Please only change them if you know what you are doing.', 'WPICSImporter') ?></p>
 						<table class="form-table">
-							<tr valign="top"><th scope="row">Import CSS File</th>
+							<tr valign="top"><th scope="row"><?php _e('Import CSS File', 'WPICSImporter') ?></th>
 								<td>
 									<input type="text" name="icsCalCssFile" style="width: 50%; " value="<?php _e($icsOptions['cal_css_file'], 'WPICSImporter') ?>" /><br />
-									<small>The Name of a CSS file to replace the one in this plugin. (ie: 'my-ics-calendar-replacement.css', same Location as Default File 'ics-calendar.css')</small>
+									<small><?php _e('The Name of a CSS file to replace the one in this plugin. (ie: \'my-ics-calendar-replacement.css\', same Location as Default File \'ics-calendar.css\')', 'WPICSImporter') ?></small>
 								</td></tr>
 							</table>
-                    <!-- disable multiple 'Save' Buttons (Admin Tabs not working anyway) 15.12.18
-                    <div class="wrap">
-                        <div class="submit"><input type="submit" class="button" name="update_ICSImporterSettings" value="<?php _e('Save Changes', 'WPICSImporter') ?>" /></div>
-                    </div>
-                    -->
 				</form>
 				</div>
 			</div>

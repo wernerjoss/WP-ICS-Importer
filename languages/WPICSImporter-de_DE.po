@@ -3,61 +3,60 @@ msgstr ""
 "Project-Id-Version: WPICSImporter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-02 18:28+0100\n"
-"PO-Revision-Date: 2012-06-21 10:50+0100\n"
-"Last-Translator: Florian <florian@mex21.net>\n"
-"Language-Team: Florian <florian@mex21.net>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-02-24 19:19+0100\n"
+"Last-Translator: Werner Joss <werner@hoernerfranzracing.de>\n"
+"Language-Team: Werner Joss <werner@hoernerfranzracing.de>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: ../cal-functions.php:35 ../cal-functions.php:36
 msgid " "
 msgstr ""
 
-#: ../cal-functions.php:147
+#: ../cal-functions.php:158
 msgid "more"
 msgstr "mehr"
 
-#: ../cal-functions.php:150
+#: ../cal-functions.php:161
 msgid "close"
 msgstr "schlie&szlig;en"
 
-#: ../cal-functions.php:183
+#: ../cal-functions.php:194
 msgid "Download"
 msgstr "Download"
 
-#: ../cal-functions.php:191
+#: ../cal-functions.php:202
 msgid "Permalink"
 msgstr "Permalink"
 
-#: ../cal-functions.php:193 ../cal-functions.php:319
+#: ../cal-functions.php:204 ../cal-functions.php:330
 msgid "Event:"
 msgstr "Termin:"
 
-#: ../cal-functions.php:202 ../cal-functions.php:325
+#: ../cal-functions.php:213 ../cal-functions.php:336
 msgid "When:"
 msgstr "Wann:"
 
-#: ../cal-functions.php:204 ../cal-functions.php:327
+#: ../cal-functions.php:215 ../cal-functions.php:338
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: ../cal-functions.php:205
+#: ../cal-functions.php:216
 msgid "Location:"
 msgstr "Ort:"
 
-#: ../cal-functions.php:207
+#: ../cal-functions.php:218
 msgid "URL:"
 msgstr ""
 
-#: ../cal-functions.php:302
+#: ../cal-functions.php:313
 msgid "Legend:"
 msgstr "Legende:"
 
@@ -71,40 +70,217 @@ msgstr "N&auml;chster"
 
 #: ../ics-functions.php:308 ../ics-functions.php:359
 msgid "There is no calendar set. Please review the calendar settings."
-msgstr ""
-"Kein Kalender ausgew&auml;hlt. &uuml;berpr&uuml;fe die Kalendereinstellungen."
+msgstr "Kein Kalender ausgew&auml;hlt. &uuml;berpr&uuml;fe die Kalendereinstellungen."
 
-#: ../ics-functions.php:316 ../ics-functions.php:373 ../ics-functions.php:421
+#: ../ics-functions.php:316 ../ics-functions.php:373 ../ics-functions.php:422
 #, php-format
 msgid "iCal Events: Error loading [%s]"
 msgstr "iCal Events: Fehler beim Laden von [%s]"
 
-#: ../ics-import.php:193
+#: ../ics-import.php:183
 msgid "Settings Updated."
 msgstr "Einstellungen gespeichert."
 
-#: ../ics-import.php:296 ../ics-import.php:414 ../ics-import.php:427
+#: ../ics-import.php:194
+msgid "ICS Calendar"
+msgstr "ICS Kalender"
+
+#: ../ics-import.php:197
+msgid "General Settings"
+msgstr "Allgemeine Einstellungen"
+
+#: ../ics-import.php:198
+msgid "Installation Instructions"
+msgstr "Installationsanleitung"
+
+#: ../ics-import.php:214
+msgid "Calendar Title"
+msgstr "Kalender Titel"
+
+#: ../ics-import.php:218
+msgid "URL to ICS File(s)"
+msgstr "URL der ICS Datei(en)"
+
+#: ../ics-import.php:239
+msgid "Calendar Background Color List"
+msgstr "Kalender Hintergrundfarben Liste"
+
+#: ../ics-import.php:241
+msgid "Comma separated Color List"
+msgstr "Kommagtrennte Farben Liste"
+
+#: ../ics-import.php:244
+msgid "Default Calendar"
+msgstr "Standard Kalender"
+
+#: ../ics-import.php:253
+msgid "Select the default calendar to show."
+msgstr "W&auml;hle den Standard-Kalender"
+
+#: ../ics-import.php:255
+msgid "Cache Calendar File"
+msgstr "Kalender Datei zwischenspeichern"
+
+#: ../ics-import.php:264
+msgid "Event Display Limit"
+msgstr "Termin Anzeige Limit"
+
+#: ../ics-import.php:269
+msgid "Set to \"0\" to show all events."
+msgstr "0 zeigt alle Termine"
+
+#: ../ics-import.php:272
+msgid "Current Event Display"
+msgstr "Anzeige aktueller Termin"
+
+#: ../ics-import.php:274
+msgid "Show only upcoming event. (Only events in the future.)"
+msgstr "Zeige nur Termine in der Zukunft"
+
+#: ../ics-import.php:280
+msgid "Previous &amp; Next"
+msgstr "Vorige &amp; N&auml;chste"
+
+#: ../ics-import.php:284
+msgid "Whether or not to show buttons that allow users to view future events."
+msgstr "Zeige Buttons die es erlauben, zukünftige Termine zu sehen"
+
+#: ../ics-import.php:287 ../ics-import.php:403
 msgid "Save Changes"
 msgstr "&Auml;nderungen speichern"
 
-#: ../ics-import.php:457
+#: ../ics-import.php:288
+msgid "Formatting"
+msgstr "Formatierung"
+
+#: ../ics-import.php:290
+msgid "Date Format"
+msgstr "Datumsformat"
+
+#: ../ics-import.php:296
+msgid "Time Format"
+msgstr "Zeitformat"
+
+#: ../ics-import.php:301
+msgid "Custom Event Format"
+msgstr "individuelles Datumsformat"
+
+#: ../ics-import.php:311
+msgid "Date Function"
+msgstr "Datumsfunktion"
+
+#: ../ics-import.php:319
+msgid "Date Locale (Language)"
+msgstr "Datums-Lokale (Sprache)"
+
+#: ../ics-import.php:322
+msgid "Use a comma to seperate multiple locales. This can only be used if the date function is set to 'strftime'."
+msgstr "Trenne mehrere Lokale durch Kommas. Dies kann nur zusammen mit der Funktion strftime verwendet werden"
+
+#: ../ics-import.php:338
+msgid "Privacy Mode"
+msgstr "Privatmodus"
+
+#: ../ics-import.php:340
+msgid "Hide your event information? "
+msgstr "Verstecke Termin Information ?"
+
+#: ../ics-import.php:343
+msgid "Set Privacy Event Title"
+msgstr "Titel für private Termine"
+
+#: ../ics-import.php:345
+msgid "This will replace your event title"
+msgstr "Dies wird den Termin Titel ersetzen"
+
+#: ../ics-import.php:350
+msgid "Calendar"
+msgstr "Kalender"
+
+#: ../ics-import.php:352
+msgid "Show Calendar Popups"
+msgstr "Zeige Kalender Popups"
+
+#: ../ics-import.php:355
+msgid "Never"
+msgstr "Nie"
+
+#: ../ics-import.php:356
+msgid "On Mouse Over"
+msgstr "Bei Maus darüber"
+
+#: ../ics-import.php:357
+msgid "On Click"
+msgstr "Bei Klick"
+
+#: ../ics-import.php:359
+msgid "When to show the popups"
+msgstr "Wann Popups anzeigen"
+
+#: ../ics-import.php:361
+msgid "Calendar Start Day"
+msgstr "Kalender Start Tag"
+
+#: ../ics-import.php:371
+msgid "What day of the week would you like the calendar to start on?"
+msgstr "An welchem Wochentag soll der Kalender beginnen?"
+
+#: ../ics-import.php:373
+msgid "Events Per Cell"
+msgstr "Termine pro Zelle"
+
+#: ../ics-import.php:375
+msgid "How many events to display per calendar cell."
+msgstr "wieviele Termine pro Zelle anzeigen"
+
+#: ../ics-import.php:377
+msgid "Events on Multiple Days"
+msgstr "Mert&auml;gige Termine"
+
+#: ../ics-import.php:381
+msgid "Whether or not to show multiday events on multiple days of the calendar, instead of just the first day."
+msgstr "Zeige mehrtägige Termine an allen Tagen, anstatt nur dem ersten."
+
+#: ../ics-import.php:383
+msgid "Calendar Permalinks"
+msgstr "Kalender Permalinks"
+
+#: ../ics-import.php:387
+msgid "Whether or not to show permalinks in the calendar popups."
+msgstr "Zeige Permalinks in den Kalender Popups"
+
+#: ../ics-import.php:389
+msgid "Calendar Download Links"
+msgstr "Kalender Download Links"
+
+#: ../ics-import.php:393
+msgid "Allow users to download individual events to their own calendars."
+msgstr "Erlaube Besuchern Termine herunterzuladen"
+
+#: ../ics-import.php:395
+msgid "Shrink Calendar"
+msgstr "Kalender verkürzen"
+
+#: ../ics-import.php:399
+msgid "Whether or not to shrink the height of the calendar based on the weeks in a given month."
+msgstr "Beschränke den Kalender auf Basis der Wochen im aktuellen Monat"
+
+#: ../ics-import.php:406
+msgid "Advanced"
+msgstr "Fortgeschrittenes"
+
+#: ../ics-import.php:407
+msgid "These settings are for advanced users. Please only change them if you know what you are doing."
+msgstr "Diese Einstellungen sind nur fuer fortgeschrittene Anwender. Bitte nur &auml;ndern wenn du genau weisst was du tust."
+
+#: ../ics-import.php:409
+msgid "Import CSS File"
+msgstr "Importiere CSS Datei"
+
+#: ../ics-import.php:412
+msgid "The Name of a CSS file to replace the one in this plugin. (ie: 'my-ics-calendar-replacement.css', same Location as Default File 'ics-calendar.css')"
+msgstr "Name der CSS Datei zum Ersatz der mitgelieferten Datei. Gleicher Ordner wie ics-calendar.css"
+
+#: ../ics-import.php:443
 msgid "Return to Calendar"
 msgstr "Zum Kalender zur&uuml;ckkehren."
-
-#~ msgid "Prev Month"
-#~ msgstr "Voriger Monat"
-
-#~ msgid "Next Month"
-#~ msgstr "N&auml;chster Monat"
-
-#~ msgid "More &raquo;"
-#~ msgstr "Mehr &raquo;"
-
-#~ msgid "&laquo; Previous"
-#~ msgstr "&laquo; Zur&uuml;ck"
-
-#~ msgid "Next &raquo;"
-#~ msgstr "Weiter &raquo;"
-
-#~ msgid "Today"
-#~ msgstr "Heute"
